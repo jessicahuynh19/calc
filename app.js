@@ -23,6 +23,12 @@ const game = ()=> {
 
         const computerNumber = Math.floor(Math.random() * 3);
         
+        options.forEach(options => {
+            options.addEventListener("click", function(){
+
+            });
+        });
+
         const computerNumber = Math.floor(Math.random() * 3);
     };
 
