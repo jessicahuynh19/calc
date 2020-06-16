@@ -24,13 +24,29 @@ const game = ()=> {
         const computerNumber = Math.floor(Math.random() * 3);
         
         options.forEach(options => {
-            options.addEventListener("click", function(){
+            options.addEventListener("click", function() {
 
+                const computerNumber = Math.floor(Math.random() * 3);
+                const computerChoice = computerOptions[computerNumber];
+                //here is where we call compare hands
             });
         });
 
-        const computerNumber = Math.floor(Math.random() * 3);
     };
+
+    const compareHands = (playerChoice, computerChoice) => {
+        //update text
+        const winner = document.querySelector('.winner');
+        //Checking for a tie
+        if(playerChoice === computerChoice){
+            winner.textContent = 'It is a tie';
+            return;
+        }
+        //Check for Rock
+        if(playerChoice === 'rock'){
+            
+        }
+    }
 
     //Call all inner function
     startGame();
