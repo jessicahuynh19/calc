@@ -3,12 +3,12 @@ const game = ()=> {
     let cScore = 0;
 
     //Start the game
-    const startGame = ()=> {
+    const startGame = () => {
         const playBtn = document.querySelector(".intro button");
         const introScreen = document.querySelector(".intro");
         const match = document.querySelector(".match");
 
-        playBtn.addEventListener("click", () =>{
+        playBtn.addEventListener("click", () => {
             introScreen.classList.add("fadeOut");
             match.classList.add("fadeIn");
         });
@@ -19,25 +19,31 @@ const game = ()=> {
         const playerHand = document.querySelector(".player-hand");
         const computerHand = document.querySelector(".computer-hand");
         //computer options
-        const computerOptions = ['rock', 'paper', 'scissors'];
-
-        const computerNumber = Math.floor(Math.random() * 3);
+        const computerOptions = ["rock", "paper", "scissors"];
         
         options.forEach(options => {
-            options.addEventListener("click", function() {
+            option.addEventListener("click", function() {
 
                 const computerNumber = Math.floor(Math.random() * 3);
                 const computerChoice = computerOptions[computerNumber];
                 //here is where we call compare hands
-
+                compareHands(this.textContent, computerChoice);
 
                 //Update images
-                playerHand.src=`/assets/${this.textContent}.png`;
-                computerHand.src=`/assets/${computerChoice}.png`;
+                playerHand.src = `/assets/${this.textContent}.png`;
+                computerHand.src = `/assets/${computerChoice}.png`;
             });
         });
 
     };
+
+    const updateScore = () => {
+        const playerScore = document.querySelector('.player-score p');
+        const computerScore = document.querySelector('.computer-score p');
+        playerScore.textContent = pScore;
+        computerScore.textContent - cScore;
+    }
+    }
 
     const compareHands = (playerChoice, computerChoice) => {
         //update text
