@@ -42,8 +42,7 @@ const game = ()=> {
         const computerScore = document.querySelector('.computer-score p');
         playerScore.textContent = pScore;
         computerScore.textContent - cScore;
-    }
-    }
+    };
 
     const compareHands = (playerChoice, computerChoice) => {
         //update text
@@ -57,9 +56,13 @@ const game = ()=> {
         if(playerChoice === 'rock'){
             if(computerChoice === 'scissors'){
                 winner.textContent = 'Player Wins'
+                pScore++;
+                updateScore();
                 return;
             }else{
                 winner.textContent = 'Computer Wins';
+                cScore++;
+                updateScore();
                 return;
             }
         }
@@ -67,9 +70,13 @@ const game = ()=> {
         if(playerChoice === 'paper'){
             if(computerChoice === 'rock'){
                 winner.textContent = 'Player Wins'
+                pScore++;
+                updateScore();
                 return;
             }else{
                 winner.textContent = 'Computer Wins';
+                cScore++;
+                updateScore();
                 return;
             }
         }
@@ -77,13 +84,17 @@ const game = ()=> {
         if(playerChoice === 'scissors'){
             if(computerChoice === 'paper'){
                 winner.textContent = 'Player Wins'
+                pScore++;
+                updateScore();
                 return;
             }else{
                 winner.textContent = 'Computer Wins';
+                cScore++;
+                updateScore();
                 return;
             }
         }
-    }
+    };
 
     //Call all inner function
     startGame();
